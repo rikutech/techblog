@@ -13,7 +13,7 @@
 Route::get('/', 'ArticlesController@index')->name('index');
 Route::get('/create', 'ArticlesController@create')->name('create');
 Route::post('/', 'ArticlesController@store')->name('store');
-Route::get('/edit', 'ArticlesController@edit')->name('edit');
+Route::get('/{id}/edit', 'ArticlesController@edit')->name('edit');
 Route::patch('/{id}', 'ArticlesController@update')->name('update');
 Route::get('/{id}', 'ArticlesController@show')->name('show');
 Route::get('/users/{id}/articles', 'ArticlesController@showUsersArticle')->name('users.articles');

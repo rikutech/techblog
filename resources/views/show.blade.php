@@ -67,7 +67,7 @@
 
             <!-- Blog Post Content Column -->
             <div class="col-lg-8">
-
+                <a class="btn btn-default" href="{{route('edit', $article->id)}}">編集</a>
                 <!-- Blog Post -->
 
                 <!-- Title -->
