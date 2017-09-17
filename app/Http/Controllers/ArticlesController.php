@@ -34,6 +34,20 @@ class ArticlesController extends Controller
         $article = $user->articles()->create($request->all());
         return redirect()->route('show', $article->id);
     }
+
+    public function edit($id)
+    {
+        $article = Article::findOrFail($id);
+        $users = User::all();
+        return view('edit', compact('article', 'users'));
+    }
+
+    public function update($id, ArticleRequest $request)
+    {
+        $article = Article::findOrFail($id);
+        $article->update($request->all());
+        return redirect()->route('show', $article->id);
+    }
     
     public function showUsersArticle($id)
     {
